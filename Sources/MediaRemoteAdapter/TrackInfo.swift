@@ -5,15 +5,15 @@ public struct TrackInfo: Codable {
     public let payload: Payload
 
     public enum ShuffleMode: Int, Codable {
-        case off = 0
-        case songs = 1
+        case off = 1
         case albums = 2
+        case songs = 3
     }
 
     public enum RepeatMode: Int, Codable {
-        case off = 0
-        case one = 1
-        case all = 2
+        case off = 1
+        case one = 2
+        case all = 3
     }
 
     public struct Payload: Codable {
