@@ -70,6 +70,8 @@ install_xsub("loop", $libref);
 install_xsub("play", $libref);
 install_xsub("pause_command", $libref);
 install_xsub("toggle_play_pause", $libref);
+install_xsub("toggle_shuffle", $libref);
+install_xsub("toggle_repeat", $libref);
 install_xsub("next_track", $libref);
 install_xsub("previous_track", $libref);
 install_xsub("stop_command", $libref);
@@ -87,6 +89,10 @@ if ($command eq 'loop') {
     pause_command();
 } elsif ($command eq 'toggle_play_pause') {
     toggle_play_pause();
+} elsif ($command eq 'toggle_shuffle') {
+    toggle_shuffle();
+} elsif ($command eq 'toggle_repeat') {
+    toggle_repeat();
 } elsif ($command eq 'next_track') {
     next_track();
 } elsif ($command eq 'previous_track') {

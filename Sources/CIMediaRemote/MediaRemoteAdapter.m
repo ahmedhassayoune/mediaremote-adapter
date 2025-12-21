@@ -305,6 +305,14 @@ void toggle_play_pause(void) {
     MRMediaRemoteSendCommand(kMRTogglePlayPause, nil);
 }
 
+void toggle_shuffle(void) {
+    MRMediaRemoteSendCommand(kMRToggleShuffle, nil);
+}
+
+void toggle_repeat(void) {
+    MRMediaRemoteSendCommand(kMRToggleRepeat, nil);
+}
+
 void next_track(void) {
     MRMediaRemoteSendCommand(kMRNextTrack, nil);
 }

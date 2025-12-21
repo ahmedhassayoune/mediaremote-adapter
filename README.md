@@ -89,6 +89,8 @@ class YourAppController {
     func play() { mediaController.play() }
     func pause() { mediaController.pause() }
     func togglePlayPause() { mediaController.togglePlayPause() }
+    func toggleShuffle() { mediaController.toggleShuffle() }
+    func toggleRepeat() { mediaController.toggleRepeat() }
     func nextTrack() { mediaController.nextTrack() }
     func previousTrack() { mediaController.previousTrack() }
     func stop() { mediaController.stop() }
@@ -164,6 +166,8 @@ These functions send an asynchronous command to the background process.
 - `play()`
 - `pause()`
 - `togglePlayPause()`
+- `toggleShuffle()`
+- `toggleRepeat()`
 - `nextTrack()`
 - `previousTrack()`
 - `stop()`
