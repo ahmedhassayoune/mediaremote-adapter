@@ -138,6 +138,16 @@ convertNowPlayingInformation(NSDictionary *information) {
       }
       return nil;
     });
+    setValue((NSString *)kShuffleMode, ^id {
+        NSNumber *mode =
+            information[(NSString *)kMRMediaRemoteNowPlayingInfoShuffleMode];
+        return mode;
+    });
+    setValue((NSString *)kRepeatMode, ^id {
+        NSNumber *mode =
+            information[(NSString *)kMRMediaRemoteNowPlayingInfoRepeatMode];
+        return mode;
+    });
 
     return data;
 }

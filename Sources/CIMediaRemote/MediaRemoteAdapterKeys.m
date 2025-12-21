@@ -14,3 +14,5 @@ NSString *const kApplicationName = @"applicationName";
 NSString *const kArtworkDataBase64 = @"artworkDataBase64";
 NSString *const kArtworkMimeType = @"artworkMimeType";
 NSString *const kTimestampEpochMicros = @"timestampEpochMicros";
+NSString *const kShuffleMode = @"shuffleMode";
+NSString *const kRepeatMode  = @"repeatMode";

@@ -173,6 +173,32 @@ These functions send an asynchronous command to the background process.
 - `stop()`
 - `setTime(seconds: Double)`
 
+### TrackInfo
+
+```
+{
+  "bundleIdentifier": "string",        // e.g. com.apple.Music, com.spotify.client
+  "applicationName": "string",         // Human-readable app name
+
+  "title": "string | null",             // Track title
+  "artist": "string | null",            // Artist name
+  "album": "string | null",             // Album name
+
+  "isPlaying": "boolean",               // true = playing, false = paused
+
+  "durationMicros": "number | null",    // Total track duration (µs)
+  "elapsedTimeMicros": "number | null", // Elapsed playback time (µs)
+
+  "timestampEpochMicros": "number",     // Unix epoch timestamp (µs)
+
+  "artworkDataBase64": "string | null", // Base64 artwork data
+  "artworkMimeType": "string | null",   // e.g. image/jpeg, image/png
+
+  "shuffleMode": 0,                     // 0 = off, 1 = songs, 2 = albums
+  "repeatMode": 0                       // 0 = off, 1 = one, 2 = all
+}
+```
+
 ## Acknowledgements
 
 This project is a Swift-based implementation heavily inspired by the original Objective-C project, [ungive/mediaremote-adapter](https://github.com/ungive/mediaremote-adapter). The core technique of using a Perl script to bypass framework restrictions was pioneered in that repository.
