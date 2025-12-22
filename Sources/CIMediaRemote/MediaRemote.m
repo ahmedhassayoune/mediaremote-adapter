@@ -9,6 +9,7 @@
 // Function pointers
 static Boolean (*_MRMediaRemoteSendCommand)(MRCommand command, id userInfo);
 static void (*_MRMediaRemoteSetShuffleMode)(int mode);
+static void (*_MRMediaRemoteSetRepeatMode)(int mode);
 static void (*_MRMediaRemoteSetElapsedTime)(double elapsedTime);
 static void (*_MRMediaRemoteRegisterForNowPlayingNotifications)(
     dispatch_queue_t queue);
@@ -25,6 +26,7 @@ static void (*_MRMediaRemoteGetNowPlayingApplicationIsPlaying)(
 // Symbol names
 static const char *const MRMediaRemoteSendCommandName = "MRMediaRemoteSendCommand";
 static const char *const MRMediaRemoteSetShuffleModeName = "MRMediaRemoteSetShuffleMode";
+static const char *const MRMediaRemoteSetRepeatModeName = "MRMediaRemoteSetRepeatMode";
 static const char *const MRMediaRemoteSetElapsedName =
     "MRMediaRemoteSetElapsedTime";
 static const char *const MRMediaRemoteRegisterForNowPlayingNotificationsName =
@@ -79,6 +81,9 @@ __attribute__((constructor)) static void initialize_mediaremote() {
     
     _MRMediaRemoteSetShuffleMode =
         dlsym(mr_framework_handle, MRMediaRemoteSetShuffleModeName);
+
+    _MRMediaRemoteSetRepeatMode =
+        dlsym(mr_framework_handle, MRMediaRemoteSetRepeatModeName);
     
     _MRMediaRemoteSetElapsedTime =
         dlsym(mr_framework_handle, MRMediaRemoteSetElapsedName);
@@ -111,6 +116,12 @@ Boolean MRMediaRemoteSendCommand(MRCommand command, id userInfo) {
 void MRMediaRemoteSetShuffleMode(int mode) {
     if (_MRMediaRemoteSetShuffleMode) {
         _MRMediaRemoteSetShuffleMode(mode);
+    }
+}
+
+void MRMediaRemoteSetRepeatMode(int mode) {
+    if (_MRMediaRemoteSetRepeatMode) {
+        _MRMediaRemoteSetRepeatMode(mode);
     }
 }
 

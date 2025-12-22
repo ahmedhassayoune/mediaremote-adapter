@@ -179,9 +179,9 @@ public class MediaController {
         }
     }
 
-    public func toggleRepeat() {
+    public func setRepeatMode(mode: Int) {
         DispatchQueue.global(qos: .userInitiated).async {
-            self.runPerlCommand(arguments: ["toggle_repeat"])
+            self.runPerlCommand(arguments: ["set_repeat_mode", String(mode)])
         }
     }
 

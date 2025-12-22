@@ -90,7 +90,7 @@ class YourAppController {
     func pause() { mediaController.pause() }
     func togglePlayPause() { mediaController.togglePlayPause() }
     func setShuffleMode(mode: Int) { mediaController.setShuffleMode(mode) }
-    func toggleRepeat() { mediaController.toggleRepeat() }
+    func setRepeatMode(mode: Int) { mediaController.setRepeatMode(mode) }
     func nextTrack() { mediaController.nextTrack() }
     func previousTrack() { mediaController.previousTrack() }
     func stop() { mediaController.stop() }
@@ -166,8 +166,8 @@ These functions send an asynchronous command to the background process.
 - `play()`
 - `pause()`
 - `togglePlayPause()`
-- `setShuffleMode(int mode)`
-- `toggleRepeat()`
+- `setShuffleMode(mode: Int)`
+- `setRepeatMode(mode: Int)`
 - `nextTrack()`
 - `previousTrack()`
 - `stop()`

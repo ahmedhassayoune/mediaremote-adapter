@@ -71,7 +71,7 @@ install_xsub("play", $libref);
 install_xsub("pause_command", $libref);
 install_xsub("toggle_play_pause", $libref);
 install_xsub("set_shuffle_mode", $libref);
-install_xsub("toggle_repeat", $libref);
+install_xsub("set_repeat_mode", $libref);
 install_xsub("next_track", $libref);
 install_xsub("previous_track", $libref);
 install_xsub("stop_command", $libref);
@@ -94,8 +94,11 @@ if ($command eq 'loop') {
     die "Missing mode argument for set_shuffle_mode\n" unless defined $mode;
     $ENV{'MEDIAREMOTE_SET_SHUFFLE_MODE'} = $mode;
     set_shuffle_mode();
-} elsif ($command eq 'toggle_repeat') {
-    toggle_repeat();
+} elsif ($command eq 'set_repeat_mode') {
+    my $mode = $ARGV[0];
+    die "Missing mode argument for set_repeat_mode\n" unless defined $mode;
+    $ENV{'MEDIAREMOTE_SET_REPEAT_MODE'} = $mode;
+    set_repeat_mode();
 } elsif ($command eq 'next_track') {
     next_track();
 } elsif ($command eq 'previous_track') {
