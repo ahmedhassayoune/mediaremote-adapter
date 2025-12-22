@@ -315,8 +315,14 @@ void toggle_play_pause(void) {
     MRMediaRemoteSendCommand(kMRTogglePlayPause, nil);
 }
 
-void toggle_shuffle(void) {
-    MRMediaRemoteSendCommand(kMRToggleShuffle, nil);
+void set_shuffle_mode(void) {
+    const char *shuffleModeStr = getenv("MEDIAREMOTE_SET_SHUFFLE_MODE");
+    if (shuffleModeStr == NULL) {
+        return;
+    }
+    
+    int mode = atoi(shuffleModeStr);
+    MRMediaRemoteSetShuffleMode(mode);
 }
 
 void toggle_repeat(void) {

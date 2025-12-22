@@ -18,7 +18,7 @@ void loop(void);
 void play(void);
 void pause_command(void);
 void toggle_play_pause(void);
-void toggle_shuffle(void);
+void set_shuffle_mode(void);
 void toggle_repeat(void);
 void next_track(void);
 void previous_track(void);

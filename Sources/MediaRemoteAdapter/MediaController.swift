@@ -173,9 +173,9 @@ public class MediaController {
         }
     }
 
-    public func toggleShuffle() {
+    public func setShuffleMode(mode: Int) {
         DispatchQueue.global(qos: .userInitiated).async {
-            self.runPerlCommand(arguments: ["toggle_shuffle"])
+            self.runPerlCommand(arguments: ["set_shuffle_mode", String(mode)])
         }
     }
 
