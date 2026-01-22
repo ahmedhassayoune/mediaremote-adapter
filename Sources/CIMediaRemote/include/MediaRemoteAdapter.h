@@ -18,8 +18,6 @@ void loop(void);
 void play(void);
 void pause_command(void);
 void toggle_play_pause(void);
-void set_shuffle_mode(void);
-void set_repeat_mode(void);
 void next_track(void);
 void previous_track(void);
 void stop_command(void);

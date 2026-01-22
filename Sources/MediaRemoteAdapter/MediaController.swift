@@ -173,18 +173,6 @@ public class MediaController {
         }
     }
 
-    public func setShuffleMode(mode: Int) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.runPerlCommand(arguments: ["set_shuffle_mode", String(mode)])
-        }
-    }
-
-    public func setRepeatMode(mode: Int) {
-        DispatchQueue.global(qos: .userInitiated).async {
-            self.runPerlCommand(arguments: ["set_repeat_mode", String(mode)])
-        }
-    }
-
     public func nextTrack() {
         DispatchQueue.global(qos: .userInitiated).async {
             self.runPerlCommand(arguments: ["next_track"])

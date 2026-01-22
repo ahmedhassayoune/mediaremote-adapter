@@ -138,16 +138,6 @@ convertNowPlayingInformation(NSDictionary *information) {
       }
       return nil;
     });
-    setValue((NSString *)kShuffleMode, ^id {
-        NSNumber *mode =
-            information[(NSString *)kMRMediaRemoteNowPlayingInfoShuffleMode];
-        return mode;
-    });
-    setValue((NSString *)kRepeatMode, ^id {
-        NSNumber *mode =
-            information[(NSString *)kMRMediaRemoteNowPlayingInfoRepeatMode];
-        return mode;
-    });
 
     return data;
 }
@@ -313,26 +303,6 @@ void pause_command(void) {
 
 void toggle_play_pause(void) {
     MRMediaRemoteSendCommand(kMRTogglePlayPause, nil);
-}
-
-void set_shuffle_mode(void) {
-    const char *shuffleModeStr = getenv("MEDIAREMOTE_SET_SHUFFLE_MODE");
-    if (shuffleModeStr == NULL) {
-        return;
-    }
-    
-    int mode = atoi(shuffleModeStr);
-    MRMediaRemoteSetShuffleMode(mode);
-}
-
-void set_repeat_mode(void) {
-    const char *repeatModeStr = getenv("MEDIAREMOTE_SET_REPEAT_MODE");
-    if (repeatModeStr == NULL) {
-        return;
-    }
-    
-    int mode = atoi(repeatModeStr);
-    MRMediaRemoteSetRepeatMode(mode);
 }
 
 void next_track(void) {

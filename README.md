@@ -89,8 +89,6 @@ class YourAppController {
     func play() { mediaController.play() }
     func pause() { mediaController.pause() }
     func togglePlayPause() { mediaController.togglePlayPause() }
-    func setShuffleMode(mode: Int) { mediaController.setShuffleMode(mode) }
-    func setRepeatMode(mode: Int) { mediaController.setRepeatMode(mode) }
     func nextTrack() { mediaController.nextTrack() }
     func previousTrack() { mediaController.previousTrack() }
     func stop() { mediaController.stop() }
@@ -166,38 +164,10 @@ These functions send an asynchronous command to the background process.
 - `play()`
 - `pause()`
 - `togglePlayPause()`
-- `setShuffleMode(mode: Int)`
-- `setRepeatMode(mode: Int)`
 - `nextTrack()`
 - `previousTrack()`
 - `stop()`
 - `setTime(seconds: Double)`
-
-### TrackInfo
-
-```
-{
-  "bundleIdentifier": "string",        // e.g. com.apple.Music, com.spotify.client
-  "applicationName": "string",         // Human-readable app name
-
-  "title": "string | null",             // Track title
-  "artist": "string | null",            // Artist name
-  "album": "string | null",             // Album name
-
-  "isPlaying": "boolean",               // true = playing, false = paused
-
-  "durationMicros": "number | null",    // Total track duration (µs)
-  "elapsedTimeMicros": "number | null", // Elapsed playback time (µs)
-
-  "timestampEpochMicros": "number",     // Unix epoch timestamp (µs)
-
-  "artworkDataBase64": "string | null", // Base64 artwork data
-  "artworkMimeType": "string | null",   // e.g. image/jpeg, image/png
-
-  "shuffleMode": 0,                     // 0 = off, 1 = songs, 2 = albums
-  "repeatMode": 0                       // 0 = off, 1 = one, 2 = all
-}
-```
 
 ## Acknowledgements
 
