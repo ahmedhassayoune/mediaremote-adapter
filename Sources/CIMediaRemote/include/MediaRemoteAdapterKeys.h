@@ -17,5 +17,9 @@ extern NSString *const kApplicationName;
 extern NSString *const kArtworkDataBase64;
 extern NSString *const kArtworkMimeType;
 extern NSString *const kTimestampEpochMicros;
+extern NSString *const kPID;
+extern NSString *const kShuffleMode;
+extern NSString *const kRepeatMode;
+extern NSString *const kPlaybackRate;
 
 #endif /* MediaRemoteAdapterKeys_h */ 
