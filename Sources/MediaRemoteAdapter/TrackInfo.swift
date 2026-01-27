@@ -103,5 +103,39 @@ public struct TrackInfo: Codable {
                 self.isPlaying = nil
             }
         }
+
+        public init(
+            title: String? = nil,
+            artist: String? = nil,
+            album: String? = nil,
+            isPlaying: Bool? = nil,
+            durationMicros: Double? = nil,
+            elapsedTimeMicros: Double? = nil,
+            applicationName: String? = nil,
+            bundleIdentifier: String? = nil,
+            artworkDataBase64: String? = nil,
+            artworkMimeType: String? = nil,
+            timestampEpochMicros: Double? = nil,
+            PID: pid_t? = nil,
+            shuffleMode: ShuffleMode? = nil,
+            repeatMode: RepeatMode? = nil,
+            playbackRate: Double? = nil
+        ) {
+            self.title = title
+            self.artist = artist
+            self.album = album
+            self.isPlaying = isPlaying
+            self.durationMicros = durationMicros
+            self.elapsedTimeMicros = elapsedTimeMicros
+            self.applicationName = applicationName
+            self.bundleIdentifier = bundleIdentifier
+            self.artworkDataBase64 = artworkDataBase64
+            self.artworkMimeType = artworkMimeType
+            self.timestampEpochMicros = timestampEpochMicros
+            self.PID = PID
+            self.shuffleMode = shuffleMode
+            self.repeatMode = repeatMode
+            self.playbackRate = playbackRate
+        }
     }
 } 
