@@ -137,5 +137,41 @@ public struct TrackInfo: Codable {
             self.repeatMode = repeatMode
             self.playbackRate = playbackRate
         }
+
+        public func copy(
+            title: String? = nil,
+            artist: String? = nil,
+            album: String? = nil,
+            isPlaying: Bool? = nil,
+            durationMicros: Double? = nil,
+            elapsedTimeMicros: Double? = nil,
+            applicationName: String? = nil,
+            bundleIdentifier: String? = nil,
+            artworkDataBase64: String? = nil,
+            artworkMimeType: String? = nil,
+            timestampEpochMicros: Double? = nil,
+            PID: pid_t? = nil,
+            shuffleMode: ShuffleMode? = nil,
+            repeatMode: RepeatMode? = nil,
+            playbackRate: Double? = nil
+        ) -> Payload {
+            Payload(
+                title: title ?? self.title,
+                artist: artist ?? self.artist,
+                album: album ?? self.album,
+                isPlaying: isPlaying ?? self.isPlaying,
+                durationMicros: durationMicros ?? self.durationMicros,
+                elapsedTimeMicros: elapsedTimeMicros ?? self.elapsedTimeMicros,
+                applicationName: applicationName ?? self.applicationName,
+                bundleIdentifier: bundleIdentifier ?? self.bundleIdentifier,
+                artworkDataBase64: artworkDataBase64 ?? self.artworkDataBase64,
+                artworkMimeType: artworkMimeType ?? self.artworkMimeType,
+                timestampEpochMicros: timestampEpochMicros ?? self.timestampEpochMicros,
+                PID: PID ?? self.PID,
+                shuffleMode: shuffleMode ?? self.shuffleMode,
+                repeatMode: repeatMode ?? self.repeatMode,
+                playbackRate: playbackRate ?? self.playbackRate
+            )
+        }
     }
 } 
